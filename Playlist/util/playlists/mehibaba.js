@@ -19,6 +19,14 @@ const mehibabaPlaylist = {
     'sy3VmDkG_rI', // गुरु उक्ति से ताको गगन में (गुरुशरण बाबा) (~2.3M)
     'H2r1EcTQhto', // पदावली भजन संग्रह (Santmat Padavali) (~1.3M)
     'EkdKfvsbFPQ', // सुपरहिट भजन संग्रह (Gurusaran Baba)
-    '9-iZ0PTKHhs'  // संतन मत भेद प्रचार किया गुरु साहब बाबा देवी ने (स्वर कंचन)
+    '9-iZ0PTKHhs', // संतन मत भेद प्रचार किया गुरु साहब बाबा देवी ने (स्वर कंचन)
+    'lb2S5CAbm_A',
+    'Y_Th931sr24',
+    'bAjkTX-QQig',
+    'HPVghUbCBUg',
+    'omqYLSyYOy4',
+    'AMEXipNScMc',
+    '_M4fwL5mCxE',
+    '0xjKrXf_cBM'
   ]
 };

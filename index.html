@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maharishi Mehi Baba — Santmat Devotional</title>
+  <meta name="description" content="Official devotional audio portal for Maharishi Mehi Baba. Listen to sacred bhajans, stuti, and spiritual chants.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08090E;
+      --card-bg: rgba(20, 22, 33, 0.65);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary: #FF8F00;
+      --primary-glow: rgba(255, 143, 0, 0.45);
+      --accent: #FFA726;
+      --text: #F8F9FA;
+      --text-muted: #9E9EA7;
+      --gold-gradient: linear-gradient(135deg, #FF6F00 0%, #FF9800 50%, #FFD54F 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* AMBIENT GLOW BACKDROPS */
+    .ambient-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.65;
+      animation: ambientPulse 12s ease-in-out infinite alternate;
+    }
+
+    .glow-1 {
+      top: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(230, 81, 0, 0.28) 0%, rgba(255, 143, 0, 0.05) 70%, transparent 100%);
+    }
+
+    .glow-2 {
+      bottom: -20%;
+      left: 20%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(124, 77, 255, 0.15) 0%, transparent 70%);
+      animation-delay: -6s;
+    }
+
+    @keyframes ambientPulse {
+      0% { transform: translateX(-50%) scale(1); opacity: 0.55; }
+      100% { transform: translateX(-50%) scale(1.15); opacity: 0.8; }
+    }
+
+    /* MAIN CONTAINER */
+    .main-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 520px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 28px;
+    }
+
+    /* SACRED PORTRAIT BADGE */
+    .portrait-wrapper {
+      position: relative;
+      width: 144px;
+      height: 144px;
+      margin-bottom: 4px;
+    }
+
+    .portrait-aura {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      opacity: 0.75;
+      filter: blur(8px);
+      animation: auraRotate 8s linear infinite;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2.5px solid rgba(255, 213, 79, 0.7);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px var(--primary-glow);
+      background: #12141F;
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .portrait-wrapper:hover .portrait-img {
+      transform: scale(1.08);
+    }
+
+    @keyframes auraRotate {
+      0% { transform: rotate(0deg) scale(0.98); }
+      50% { transform: rotate(180deg) scale(1.04); }
+      100% { transform: rotate(360deg) scale(0.98); }
+    }
+
+    /* TITLES & HEADINGS */
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hindi-title {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #FFFFFF 30%, #FFE082 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.3;
+    }
+
+    .subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 13.5px;
+      letter-spacing: 0.24em;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .tagline {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 360px;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    /* ACTION CARD & RADIO BUTTON */
+    .action-card {
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 24px 20px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .action-card:hover {
+      border-color: rgba(255, 143, 0, 0.35);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.5), 0 0 28px rgba(255, 143, 0, 0.12);
+    }
+
+    /* MAIN RADIO BUTTON */
+    .radio-btn {
+      width: 100%;
+      max-width: 380px;
+      padding: 16px 28px;
+      border: none;
+      outline: none;
+      border-radius: 22px;
+      background: var(--gold-gradient);
+      color: #261100;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 10px 30px var(--primary-glow), inset 0 1.5px 1px rgba(255, 255, 255, 0.7);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .radio-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .radio-btn:hover::before {
+      left: 100%;
+    }
+
+    .radio-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 38px rgba(255, 111, 0, 0.6), inset 0 1.5px 1px rgba(255, 255, 255, 0.85);
+    }
+
+    .radio-btn:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .radio-btn-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .radio-icon-box {
+      width: 44px;
+      height: 44px;
+      background: rgba(38, 17, 0, 0.14);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .radio-icon-box svg {
+      width: 24px;
+      height: 24px;
+      fill: #261100;
+    }
+
+    .radio-btn-text {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .radio-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .radio-sub {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.85;
+      letter-spacing: 0.02em;
+    }
+
+    /* EQUALIZER ANIMATION */
+    .equalizer {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 20px;
+      padding-right: 4px;
+    }
+
+    .eq-bar {
+      width: 3.5px;
+      background: #261100;
+      border-radius: 2px;
+      animation: eqBounce 1.2s ease-in-out infinite alternate;
+    }
+
+    .eq-bar:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+    .eq-bar:nth-child(2) { height: 18px; animation-delay: 0.4s; }
+    .eq-bar:nth-child(3) { height: 14px; animation-delay: 0.2s; }
+    .eq-bar:nth-child(4) { height: 7px; animation-delay: 0.6s; }
+
+    @keyframes eqBounce {
+      0% { height: 4px; }
+      50% { height: 18px; }
+      100% { height: 8px; }
+    }
+
+    /* TRACK CHIPS INFO */
+    .playlist-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .meta-chip span {
+      color: var(--primary);
+    }
+
+    /* FOOTER */
+    .footer {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    .footer strong {
+      color: rgba(255, 213, 79, 0.7);
+      font-weight: 600;
+    }
+
+    /* SEAMLESS EMBEDDED PLAYER MODAL */
+    .radio-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform: scale(0.96);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .radio-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    .modal-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: #0F1117;
+    }
+
+    /* DISCREET MODAL CLOSE BAR (SHOWN AS TOP OVERLAY CONTROL IF NEEDED) */
+    .modal-top-bar {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      z-index: 1005;
+      display: flex;
+      gap: 10px;
+    }
+
+    .modal-bar-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(18, 20, 29, 0.65);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: all 0.2s ease;
+    }
+
+    .modal-bar-btn:hover {
+      background: rgba(18, 20, 29, 0.9);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT BACKGROUND GLOWS -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- MINIMALISTIC HOMEPAGE CONTENT -->
+  <main class="main-container">
+    
+    <!-- SACRED PORTRAIT -->
+    <div class="portrait-wrapper">
+      <div class="portrait-aura"></div>
+      <div class="portrait-frame">
+        <img 
+          src="Playlist/util/MehiBabaFullPoster.png" 
+          alt="Maharishi Mehi Paramhans Ji Maharaj" 
+          class="portrait-img"
+          loading="eager"
+        >
+      </div>
+    </div>
+
+    <!-- TITLE & DIVINE HEADER -->
+    <div class="header-text">
+      <h1 class="hindi-title">महर्षि मेंहीं परमहंस जी महाराज</h1>
+      <div class="subtitle">Santmat Satsang & Bhajans</div>
+      <p class="tagline">
+        अंतर साधना और गुरु भक्ति की अमृतमयी वाणी एवं पावन भजनों का दिव्य संग्रह।
+      </p>
+    </div>
+
+    <!-- MAIN ACTION CARD WITH RADIO BUTTON -->
+    <div class="action-card">
+      <button 
+        id="radio-button" 
+        class="radio-btn" 
+        onclick="openRadioPlayer()" 
+        title="Open Maharishi Mehi Baba Radio Player"
+      >
+        <div class="radio-btn-left">
+          <div class="radio-icon-box">
+            <!-- Radio Broadcast SVG -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3a9 9 0 0 0-9 9 8.96 8.96 0 0 0 3.32 6.96l1.42-1.42A6.98 6.98 0 0 1 5 12a7 7 0 1 1 14 0 6.98 6.98 0 0 1-2.74 5.54l1.42 1.42A8.96 8.96 0 0 0 21 12a9 9 0 0 0-9-9zm0 4a5 5 0 0 0-5 5 4.98 4.98 0 0 0 2.05 4.05l1.42-1.42A2.99 2.99 0 0 1 9 12a3 3 0 1 1 6 0 2.99 2.99 0 0 1-1.47 2.63l1.42 1.42A4.98 4.98 0 0 0 17 12a5 5 0 0 0-5-5zm0 3a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/>
+            </svg>
+          </div>
+          <div class="radio-btn-text">
+            <span class="radio-title">Radio</span>
+            <span class="radio-sub">Listen to Divine Satsang & Chants</span>
+          </div>
+        </div>
+
+        <!-- ANIMATED EQUALIZER INDICATOR -->
+        <div class="equalizer" aria-hidden="true">
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+        </div>
+      </button>
+
+      <!-- PLAYLIST QUICK STATS -->
+      <div class="playlist-meta">
+        <div class="meta-chip">
+          <span>🪔</span> Mehi Baba Bhajans
+        </div>
+        <div class="meta-chip">
+          <span>🔱</span> Lord Shiva
+        </div>
+      </div>
+    </div>
+
+    <!-- REVERENT FOOTER -->
+    <footer class="footer">
+      <strong>जय गुरु महाराज</strong> • Santmat Devotional Portal
+    </footer>
+
+  </main>
+
+  <!-- IMMERSIVE RADIO PLAYER OVERLAY -->
+  <div id="radio-modal" class="radio-modal" aria-hidden="true">
+    <div class="modal-top-bar">
+      <!-- Direct tab open button -->
+      <a 
+        href="Playlist/util/player.html" 
+        target="_blank" 
+        class="modal-bar-btn" 
+        title="Open player in full tab"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <!-- Close modal button -->
+      <button 
+        class="modal-bar-btn" 
+        onclick="closeRadioPlayerApp()" 
+        title="Close Radio Player"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <iframe 
+      id="player-iframe" 
+      class="modal-frame" 
+      src="about:blank" 
+      title="Maharishi Mehi Baba Music Player"
+      allow="autoplay; encrypted-media"
+    ></iframe>
+  </div>
+
+  <script>
+    var playerIframe = document.getElementById('player-iframe');
+    var radioModal = document.getElementById('radio-modal');
+    var isLoaded = false;
+
+    function openRadioPlayer() {
+      if (!isLoaded) {
+        playerIframe.src = 'Playlist/util/player.html';
+        isLoaded = true;
+      }
+      radioModal.classList.add('active');
+      radioModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRadioPlayerApp() {
+      radioModal.classList.remove('active');
+      radioModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Expose closeRadioPlayerApp to window so player.html inside iframe can call window.parent.closeRadioPlayerApp()
+    window.closeRadioPlayerApp = closeRadioPlayerApp;
+
+    // Handle Escape key to close player
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && radioModal.classList.contains('active')) {
+        closeRadioPlayerApp();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -8,6 +8,5 @@
 
 window.BE_CREATOR_PLAYLISTS = [
   typeof mehibabaPlaylist !== 'undefined' ? mehibabaPlaylist : null,
-  typeof teashopPlaylist !== 'undefined' ? teashopPlaylist : null,
   typeof shivaPlaylist !== 'undefined' ? shivaPlaylist : null
 ].filter(Boolean);

@@ -18,6 +18,7 @@ const mehibabaPlaylist = {
     '4ZwardVvatE', // ईश-स्तुति (सांय कालीन गुरु-स्तुति) (~3.2M)
     'sy3VmDkG_rI', // गुरु उक्ति से ताको गगन में (गुरुशरण बाबा) (~2.3M)
     'H2r1EcTQhto', // पदावली भजन संग्रह (Santmat Padavali) (~1.3M)
-    'EkdKfvsbFPQ'  // सुपरहिट भजन संग्रह (Gurusaran Baba)
+    'EkdKfvsbFPQ', // सुपरहिट भजन संग्रह (Gurusaran Baba)
+    '9-iZ0PTKHhs'  // संतन मत भेद प्रचार किया गुरु साहब बाबा देवी ने (स्वर कंचन)
   ]
 };

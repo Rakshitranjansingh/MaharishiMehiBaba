@@ -286,7 +286,6 @@
 
   <!-- PLAYLIST DATA MODULES -->
   <script src="playlists/mehibaba.js"></script>
-  <script src="playlists/shiva.js"></script>
   <script src="playlists/config.js"></script>
 
   <script>
@@ -333,6 +332,11 @@
         bgDiv.style.backgroundImage = "url('" + p.bgImage + "')";
         bgContainer.appendChild(bgDiv);
       });
+
+      var swipeHint = document.querySelector('.swipe-hint-container');
+      if (swipeHint && PLAYLISTS.length <= 1) {
+        swipeHint.style.display = 'none';
+      }
 
       applyProfileState(activeProfileIndex, true);
     }

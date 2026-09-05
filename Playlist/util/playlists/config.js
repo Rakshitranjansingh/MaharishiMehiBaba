@@ -7,6 +7,5 @@
 // 3. Add your playlist object to BE_CREATOR_PLAYLISTS below!
 
 window.BE_CREATOR_PLAYLISTS = [
-  typeof mehibabaPlaylist !== 'undefined' ? mehibabaPlaylist : null,
-  typeof shivaPlaylist !== 'undefined' ? shivaPlaylist : null
+  typeof mehibabaPlaylist !== 'undefined' ? mehibabaPlaylist : null
 ].filter(Boolean);

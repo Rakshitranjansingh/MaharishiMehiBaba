@@ -27,6 +27,7 @@ const mehibabaPlaylist = {
     'omqYLSyYOy4',
     'AMEXipNScMc',
     '_M4fwL5mCxE',
-    '0xjKrXf_cBM'
+    '0xjKrXf_cBM',
+    's6bbmdJNtqg' // जिसको जीवन में मिला सत्संग है
   ]
 };

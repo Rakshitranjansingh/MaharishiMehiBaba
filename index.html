@@ -231,6 +231,31 @@
       overflow: hidden;
     }
 
+    .prayer-btn {
+      background: linear-gradient(135deg, #D84315 0%, #F57C00 50%, #FF9800 100%);
+      box-shadow: 0 10px 28px rgba(216, 67, 21, 0.38), inset 0 1.5px 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .prayer-btn:hover {
+      box-shadow: 0 14px 36px rgba(216, 67, 21, 0.52), inset 0 1.5px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-arrow-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      transition: transform 0.25s ease;
+    }
+
+    .prayer-btn:hover .btn-arrow-icon {
+      transform: translateX(3px);
+    }
+
     .radio-btn::before {
       content: '';
       position: absolute;
@@ -459,24 +484,26 @@
       </p>
     </div>
 
-    <!-- MAIN ACTION CARD WITH RADIO BUTTON -->
+    <!-- MAIN ACTION CARD WITH BHAJAN & PRAYER BUTTONS -->
     <div class="action-card">
+      
+      <!-- BUTTON 1: BHAJAN (भजन) -->
       <button 
-        id="radio-button" 
+        id="bhajan-button" 
         class="radio-btn" 
         onclick="openRadioPlayer()" 
-        title="Open Maharishi Mehi Baba Radio Player"
+        title="महर्षि मेंहीं पावन भजन सुनें"
       >
         <div class="radio-btn-left">
           <div class="radio-icon-box">
-            <!-- Radio Broadcast SVG -->
+            <!-- Music / Sound SVG -->
             <svg viewBox="0 0 24 24">
-              <path d="M12 3a9 9 0 0 0-9 9 8.96 8.96 0 0 0 3.32 6.96l1.42-1.42A6.98 6.98 0 0 1 5 12a7 7 0 1 1 14 0 6.98 6.98 0 0 1-2.74 5.54l1.42 1.42A8.96 8.96 0 0 0 21 12a9 9 0 0 0-9-9zm0 4a5 5 0 0 0-5 5 4.98 4.98 0 0 0 2.05 4.05l1.42-1.42A2.99 2.99 0 0 1 9 12a3 3 0 1 1 6 0 2.99 2.99 0 0 1-1.47 2.63l1.42 1.42A4.98 4.98 0 0 0 17 12a5 5 0 0 0-5-5zm0 3a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/>
+              <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
             </svg>
           </div>
           <div class="radio-btn-text">
-            <span class="radio-title">Radio</span>
-            <span class="radio-sub">Listen to Divine Satsang & Chants</span>
+            <span class="radio-title">भजन</span>
+            <span class="radio-sub">सत्संग एवं मधुर भजन संग्रह</span>
           </div>
         </div>
 
@@ -489,13 +516,40 @@
         </div>
       </button>
 
-      <!-- PLAYLIST QUICK STATS -->
+      <!-- BUTTON 2: PRAYER (प्रार्थना) -->
+      <button 
+        id="prayer-button" 
+        class="radio-btn prayer-btn" 
+        onclick="openPrayerModal()" 
+        title="संतमत स्तुति, विनती एवं आरती पाठ"
+      >
+        <div class="radio-btn-left">
+          <div class="radio-icon-box">
+            <!-- Diya / Prayer SVG -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C11.5 2 11 2.2 10.7 2.6c-1.4 1.9-2.7 4.2-2.7 6.4 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.3-4.5-2.7-6.4-.3-.4-.8-.6-1.3-.6zm0 2.5c.8 1.4 1.8 3.3 1.9 4.5 0 1.1-.9 2-1.9 2s-1.9-.9-1.9-2c0-1.2 1-3.1 1.9-4.5zM4 14c0 3.3 3.6 6 8 6s8-2.7 8-6H4zm8 8c-3.9 0-7.2-1.4-7.8-3.3h15.6c-.6 1.9-3.9 3.3-7.8 3.3z"/>
+            </svg>
+          </div>
+          <div class="radio-btn-text">
+            <span class="radio-title">प्रार्थना</span>
+            <span class="radio-sub">स्तुति, विनती, सिद्धान्त एवं आरती</span>
+          </div>
+        </div>
+
+        <div class="btn-arrow-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </div>
+      </button>
+
+      <!-- QUICK STATS -->
       <div class="playlist-meta">
         <div class="meta-chip">
           <span>🪔</span> Mehi Baba Bhajans
         </div>
         <div class="meta-chip">
-          <span>🎵</span> 16 Divine Tracks
+          <span>📖</span> स्तुति-आरती
         </div>
       </div>
     </div>
@@ -545,15 +599,56 @@
     ></iframe>
   </div>
 
+  <!-- IMMERSIVE PRAYER OVERLAY -->
+  <div id="prayer-modal" class="radio-modal" aria-hidden="true">
+    <div class="modal-top-bar">
+      <!-- Direct tab open button -->
+      <a 
+        href="prayer.html" 
+        target="_blank" 
+        class="modal-bar-btn" 
+        title="Open prayer in full tab"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <!-- Close modal button -->
+      <button 
+        class="modal-bar-btn" 
+        onclick="closePrayerModal()" 
+        title="Close Prayer"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <iframe 
+      id="prayer-iframe" 
+      class="modal-frame" 
+      src="about:blank" 
+      title="Santmat Prayer Reader"
+    ></iframe>
+  </div>
+
   <script>
     var playerIframe = document.getElementById('player-iframe');
     var radioModal = document.getElementById('radio-modal');
-    var isLoaded = false;
+    var isPlayerLoaded = false;
+
+    var prayerIframe = document.getElementById('prayer-iframe');
+    var prayerModal = document.getElementById('prayer-modal');
+    var isPrayerLoaded = false;
 
     function openRadioPlayer() {
-      if (!isLoaded) {
+      if (!isPlayerLoaded) {
         playerIframe.src = 'Playlist/util/player.html';
-        isLoaded = true;
+        isPlayerLoaded = true;
       }
       radioModal.classList.add('active');
       radioModal.setAttribute('aria-hidden', 'false');
@@ -565,14 +660,34 @@
       radioModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
-
-    // Expose closeRadioPlayerApp to window so player.html inside iframe can call window.parent.closeRadioPlayerApp()
     window.closeRadioPlayerApp = closeRadioPlayerApp;
 
-    // Handle Escape key to close player
+    function openPrayerModal() {
+      if (!isPrayerLoaded) {
+        prayerIframe.src = 'prayer.html';
+        isPrayerLoaded = true;
+      }
+      prayerModal.classList.add('active');
+      prayerModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePrayerModal() {
+      prayerModal.classList.remove('active');
+      prayerModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    window.closePrayerModal = closePrayerModal;
+
+    // Handle Escape key to close any active modal
     window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && radioModal.classList.contains('active')) {
-        closeRadioPlayerApp();
+      if (e.key === 'Escape') {
+        if (radioModal.classList.contains('active')) {
+          closeRadioPlayerApp();
+        }
+        if (prayerModal.classList.contains('active')) {
+          closePrayerModal();
+        }
       }
     });
   </script>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>संतमत-सत्संग स्तुति, विनती और आरती — महर्षि मेंहीं</title>
+  <meta name="description" content="महर्षि मेंहीं परमहंस जी महाराज - संतमत सत्संग की दैनिक स्तुति, विनती, सिद्धांत, सार शिक्षा एवं आरती।">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#FF8F00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF4E6;
+      --bg-gradient: radial-gradient(circle at 50% 10%, #FFE8D1 0%, #FFF3E5 45%, #FFFDF9 100%);
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(255, 171, 92, 0.4);
+      --primary: #E65100;
+      --primary-glow: rgba(230, 81, 0, 0.35);
+      --accent: #FF8F00;
+      --text: #261408;
+      --text-muted: #6B4931;
+      --gold-gradient: linear-gradient(135deg, #FF6F00 0%, #FF8F00 50%, #FFA000 100%);
+      --verse-size: 17px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans Devanagari', 'Outfit', sans-serif;
+      line-height: 1.8;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* TOP STICKY BAR */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 244, 230, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid var(--card-border);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(220, 110, 20, 0.08);
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1.5px solid var(--card-border);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: var(--primary);
+      color: #FFF;
+      transform: scale(1.06);
+    }
+
+    .top-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #7A2400;
+      letter-spacing: 0.02em;
+    }
+
+    .font-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .font-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--card-border);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .font-btn:hover {
+      background: #FFE8D1;
+      color: var(--primary);
+    }
+
+    /* QUICK NAVIGATION CHIPS */
+    .nav-chips-container {
+      max-width: 820px;
+      margin: 16px auto 0;
+      padding: 0 16px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-chips-container::-webkit-scrollbar { display: none; }
+
+    .nav-chip {
+      flex-shrink: 0;
+      padding: 6px 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #7A2400;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(220, 110, 20, 0.06);
+    }
+
+    .nav-chip:hover, .nav-chip.active {
+      background: var(--gold-gradient);
+      color: #FFF;
+      border-color: transparent;
+      transform: translateY(-1px);
+    }
+
+    /* MAIN PRAYER CONTENT CONTAINER */
+    .container {
+      max-width: 820px;
+      margin: 20px auto 60px;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* PRAYER SECTION CARD */
+    .prayer-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 36px rgba(220, 110, 20, 0.09);
+      scroll-margin-top: 90px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .prayer-card:hover {
+      box-shadow: 0 16px 44px rgba(220, 110, 20, 0.14);
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #FFE8D1;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #7A2400;
+      margin-bottom: 18px;
+      line-height: 1.4;
+      border-bottom: 1.5px dashed rgba(255, 171, 92, 0.5);
+      padding-bottom: 10px;
+    }
+
+    .verse-content {
+      font-size: var(--verse-size);
+      color: var(--text);
+      line-height: 2.1;
+      white-space: pre-line;
+      letter-spacing: 0.01em;
+    }
+
+    .highlight-tek {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .numbered-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .numbered-item {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      font-size: var(--verse-size);
+      line-height: 1.85;
+    }
+
+    .item-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #FFE8D1;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    /* FOOTER */
+    .prayer-footer {
+      text-align: center;
+      padding: 30px 20px 40px;
+      font-size: 14px;
+      color: #7D5A42;
+      border-top: 1px solid var(--card-border);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .prayer-footer strong {
+      color: var(--primary);
+      font-size: 16px;
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP STICKY HEADER -->
+  <header class="top-bar">
+    <div class="top-left">
+      <button class="back-btn" onclick="goBack()" title="मुख्य पृष्ठ पर लौटें">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="top-title">स्तुति-विनती और आरती</h1>
+    </div>
+
+    <!-- FONT SIZE CONTROLS -->
+    <div class="font-controls" title="फॉन्ट आकार बदलें">
+      <button class="font-btn" onclick="adjustFontSize(-1)">अ-</button>
+      <button class="font-btn" onclick="adjustFontSize(1)">अ+</button>
+    </div>
+  </header>
+
+  <!-- QUICK NAVIGATION PILLS -->
+  <nav class="nav-chips-container" aria-label="त्वरित सूची">
+    <a href="#ish-stuti" class="nav-chip">ईश-स्तुति</a>
+    <a href="#sant-stuti" class="nav-chip">सन्त-स्तुति</a>
+    <a href="#guru-stuti" class="nav-chip">गुरु-स्तुति</a>
+    <a href="#chhappaya" class="nav-chip">छप्पय</a>
+    <a href="#naam-sankirtan" class="nav-chip">नाम-संकीर्त्तन</a>
+    <a href="#siddhant" class="nav-chip">सन्तमत-सिद्धान्त</a>
+    <a href="#saar-shiksha" class="nav-chip">सार शिक्षा</a>
+    <a href="#paribhasha" class="nav-chip">परिभाषा</a>
+    <a href="#vinati" class="nav-chip">विनती</a>
+    <a href="#guru-sankirtan" class="nav-chip">गुरु-संकीर्त्तन</a>
+    <a href="#aarati-1" class="nav-chip">आरती (अन्तर जोत)</a>
+    <a href="#aarati-2" class="nav-chip">आरती (तन-मन्दिर)</a>
+  </nav>
+
+  <!-- MAIN PRAYER CONTENT -->
+  <main class="container">
+
+    <!-- 1. प्रातःकालीन ईश-स्तुति -->
+    <section class="prayer-card" id="ish-stuti">
+      <div class="section-badge">भाग १</div>
+      <h2 class="card-title">प्रातःकालीन ईश-स्तुति</h2>
+      <div class="verse-content">सब क्षेत्र क्षर अपरा परा पर, औरु अक्षर पार में ।
+निर्गुण सगुण के पार में, सत् असत् हू के पार में ।।१।।
+
+सब नाम रूप के पार में, मन बुद्धि वच के पार में ।
+गो गुण विषय पँच पार में, गति भाँति के हू पार में ।।२।।
+
+सूरत निरत के पार में, सब द्वन्द्व द्वैतन्ह पार में ।
+आहत अनाहत पार में, सारे प्रपञ्चन्ह पार में ।।३।।
+
+सापेक्षता के पार में, त्रिपुटी कुटी के पार में ।
+सब कर्म काल के पार में, सारे जंजालन्ह पार में ।।४।।
+
+अद्वय अनामय अमल अति, आधेयता गुण पार में ।
+सत्तास्वरूप अपार सर्वाधार मैं-तू पार में ।।५।।
+
+पुनि ओ३म् सोऽहम् पार में, अरु सच्चिदानंद पार में ।
+हैं अनन्त व्यापक व्याप्य जो, पुनि व्याप्य व्यापक पार में ।।६।।
+
+हैं हिरण्यगर्भहु खर्व जासों, जो हैं सान्तन्ह पार में ।
+सर्वेश हैं अखिलेश हैं, विश्वेश हैं सब पार में ।।७।।
+
+सत्शब्द धरकर चल मिलन, आवरण सारे पार में ।
+सद्गुरु करुण कर तर ठहर, धर ‘मेंहीं’ जावे पार में ।।८।।</div>
+    </section>
+
+    <!-- 2. प्रातः एवं सायंकालीन सन्त-स्तुति -->
+    <section class="prayer-card" id="sant-stuti">
+      <div class="section-badge">भाग २</div>
+      <h2 class="card-title">प्रातः एवं सायंकालीन सन्त-स्तुति</h2>
+      <div class="verse-content"><span class="highlight-tek">सब सन्तन्ह की बड़ि बलिहारी ।। टेक ।।</span>
+उनकी स्तुति केहि विधि कीजै, मोरी मति अति नीच अनाड़ी ।। सब०।।
+
+दुख-भंजन भव-फंदन-गंजन, ज्ञान-ध्यान-निधि जग-उपकारी ।
+विन्दु-ध्यान-विधि नाद-ध्यान-विधि, सरल-सरल जग में परचारी ।। सब०।।
+
+धनि ऋषि-सन्तन्ह धन्य बुद्ध जी, शंकर रामानन्द धन्य अघारी ।
+धन्य हैं साहब सन्त कबीर जी, धनि नानक गुरु महिमा भारी ।। सब०।।
+
+गोस्वामी श्री तुलसि दास जी, तुलसी साहब अति उपकारी ।
+दादू सुन्दर सूर श्वपच रवि, जगजीवन पलटू भयहारी ।। सब०।।
+
+सतगुरु देवी अरु जे भये हैं, होंगे सब चरणन शिरधारी ।
+भजत है ‘मेंहीं’ धन्य-धन्य कहि, गही सन्त-पद आशा सारी ।। सब०।।</div>
+    </section>
+
+    <!-- 3. प्रातःकालीन गुरु-स्तुति -->
+    <section class="prayer-card" id="guru-stuti">
+      <div class="section-badge">भाग ३</div>
+      <h2 class="card-title">प्रातःकालीन गुरु-स्तुति</h2>
+      <div class="verse-content">मंगल मूरति सतगुरू, मिलवैं सर्वाधार ।
+मंगलमय मंगल करण, विनवौं बारम्बार ।।१।।
+
+ज्ञान-उदधि अरु ज्ञान-घन, सतगुरु शंकर रूप ।
+नमो-नमो बहु बार हीं, सकल सुपूज्यन भूप ।।२।।
+
+सकल भूल-नाशक प्रभू, सतगुरु परम कृपाल ।
+नमो कंज-पद युग पकड़ि, सुनु प्रभु नजर निहाल ।।३।।
+
+दया-दृष्टि करि नाशिये, मेरो भूल अरु चूक ।
+खरो तीक्ष्ण बुधि मोरि ना, पाणि जोड़ि कहुँ कूक ।।४।।
+
+नमो गुरू सतगुरु नमो, नमो-नमो गुरुदेव ।
+नमो विघ्न हरता गुरू, निर्मल जाको भेव ।।५।।
+
+ब्रह्म रूप सतगुरु नमो, प्रभु सर्वेश्वर रूप ।
+राम दिवाकर रूप गुरु, नाशक भ्रम-तम-कूप ।।६।।
+
+नमो सुसाहब सतगुरु, विघ्न विनाशक द्याल ।
+सुबुधि विगासक ज्ञानप्रद, नाशक भ्रम-तम-जाल ।।७।।
+
+नमो-नमो सतगुरु नमो, जा सम कोउ न आन ।
+परम पुरुषहू तें अधिक, गावें सन्त सुजान ।।८।।</div>
+    </section>
+
+    <!-- 4. छप्पय -->
+    <section class="prayer-card" id="chhappaya">
+      <div class="section-badge">भाग ४</div>
+      <h2 class="card-title">छप्पय</h2>
+      <div class="verse-content">जय जय परम प्रचण्ड, तेज तम-मोह विनाशन ।
+जय जय तारण तरण, करन जन शुद्ध बुद्ध सन ।।
+जय जय बोध महान, आन कोउ सरवर नाहीं ।
+सुर नर लोकन माहिं, परम कीरति सब ठाहीं ।।
+सतगुरु परम उदार हैं, सकल जयति जय-जय करें ।
+तम अज्ञान महान अरु, भूल-चूक-भ्रम मम हरें ।।१।।
+
+जय जय ज्ञान अखण्ड, सूर्य भव-तिमिर विनाशन ।
+जय जय जय सुख रूप, सकल भव-त्रस हरासन ।।
+जय-जय संसृति-रोग-सोग, को वैद्य श्रेष्ठतर ।
+जय-जय परम कृपाल, सकल अज्ञान चूक हर ।।
+जय-जय सतगुरु परम गुरु, अमित-अमित परणाम मैं ।
+नित्य करूँ, सुमिरत रहूँ, प्रेम-सहित गुरुनाम मैं ।।२।।
+
+जयति भक्ति-भण्डार, ध्यान अरु ज्ञान-निकेतन ।
+योग बतावनिहार, सरल जय-जय अति चेतन ।।
+करनहार बुधि तीव्र, जयति जय-जय गुरु पूरे ।
+जय-जय गुरु महाराज, उक्ति-दाता अति रूरे ।।
+जयति-जयति श्री सतगुरू, जोड़ि पाणि युग पद धरौं ।
+चूक से रक्षा कीजिये, बार-बार विनती करौं ।।३।।
+
+भक्ति योग अरु ध्यान को, भेद बतावनिहारे ।
+श्रवण मनन निदिध्यास, सकल दरसावनिहारे ।।
+सतसंगति अरु सूक्ष्म वारता, देहिं बताई ।
+अकपट परमोदार न कछु, गुरु धरें छिपाई ।।
+जय-जय-जय सतगुरु सुखद, ज्ञान सम्पूरण अंग सम ।
+कृपा-दृष्टि करि हेरिये, हरिय युक्ति बेढंग मम ।।४।।</div>
+    </section>
+
+    <!-- 5. प्रातःकालीन नाम-संकीर्त्तन -->
+    <section class="prayer-card" id="naam-sankirtan">
+      <div class="section-badge">भाग ५</div>
+      <h2 class="card-title">प्रातःकालीन नाम-संकीर्त्तन</h2>
+      <div class="verse-content">अव्यक्त अनादि अनन्त अजय, अज आदि मूल परमातम जो ।
+ध्वनि प्रथम स्फुटित परा धारा, जिनसे कहिये स्फोट है सो ।।१।।
+
+है स्फोट वही उद्गीथ वही, ब्रह्मनाद, शब्दब्रह्म ओ३म् वही ।
+अति मधुर प्रणव ध्वनि धार वही, है परमातम-प्रतीक वही ।।२।।
+
+प्रभु का ध्वन्यात्मक नाम वही, है सारशब्द सत्शब्द वही ।
+है सत् चेतन अव्यक्त वही, व्यक्तों में व्यापक नाम वही ।।३।।
+
+है सर्वव्यापिनि ध्वनि राम वही, सर्व-कर्षक हरि कृष्ण नाम वही ।
+है परम प्रचण्डिनि शक्ति वही, है शिव शंकर हर नाम वही ।।४।।
+
+पुनि राम नाम है अगुण वही, है अकथ अगम पूर्णकाम वही ।
+स्वर-व्यंजन-रहित अघोष वही, चेतन ध्वनि-सिन्धु अदोष वही ।।५।।
+
+है एक ओ३म् सत्नाम वही, ऋषि-सेवित प्रभु का नाम वही ।
+मुनि-सेवित गुरु का नाम वही ।
+भजो ॐ ॐ प्रभु नाम यही, भजो ॐ ॐ ‘मेंहीं’ नाम यही ।।६।।</div>
+    </section>
+
+    <!-- 6. सन्तमत-सिद्धान्त -->
+    <section class="prayer-card" id="siddhant">
+      <div class="section-badge">भाग ६</div>
+      <h2 class="card-title">सन्तमत-सिद्धान्त</h2>
+      <div class="numbered-list">
+        <div class="numbered-item">
+          <span class="item-num">१</span>
+          <div>जो परम तत्त्व आदि-अन्त-रहित, असीम, अजन्मा, अगोचर, सर्वव्यापक और सर्वव्यापकता के भी परे है, उसे ही सर्वेश्वर- सर्वाधार मानना चाहिए तथा अपरा (जड़) और परा (चेतन); दोनों प्रकृतियों के पार में, अगुण और सगुण पर, अनादि-अनन्त-स्वरूपी, अपरम्पार शक्तियुक्त, देशकालातीत, शब्दातीत, नाम-रूपातीत, अद्वितीय, मन-बुद्धि और इन्द्रियों के परे जिस परम सत्ता पर यह सारा प्रकृति-मण्डल एक महान् यन्त्र की नाईं परिचालित होता रहता है, जो न व्यक्ति है और न व्यक्त है, जो मायिक विस्तृतत्व-विहीन है, जो अपने से बाहर कुछ भी अवकाश नहीं रखता है, जो परम सनातन, परम पुरातन एवं सर्वप्रथम से विद्यमान है, सन्तमत में उसे ही परम अध्यात्म-पद वा परम अध्यात्मस्वरूपी परम प्रभु सर्वेश्वर (कुल्ल मालिक) मानते हैं।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">२</span>
+          <div>जीवात्मा सर्वेश्वर का अभिन्न अंश है ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">३</span>
+          <div>प्रकृति आदि-अन्त-सहित है और सृजित है ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">४</span>
+          <div>मायाबद्ध जीव आवागमन के चक्र में पड़ा रहता है । इस प्रकार रहना जीव के सब दुःखों का कारण है । इससे छुटकारा पाने के लिए सर्वेश्वर की भक्ति ही एकमात्र उपाय है ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">५</span>
+          <div>मानस जप, मानस ध्यान, दृष्टि-साधन और सुरत-शब्द-योग द्वारा सर्वेश्वर की भक्ति करके अन्धकार, प्रकाश और शब्द के प्राकृतिक तीनों परदों से पार जाना और सर्वेश्वर से एकता का ज्ञान प्राप्त करके मोक्ष पा लेने का मनुष्य-मात्र अधिकारी है ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">६</span>
+          <div>झूठ बोलना, नशा खाना, व्यभिचार करना, हिंसा करनी अर्थात् जीवों को दुःख देना वा मत्स्य-मांस को खाद्य पदार्थ समझना और चोरी करनी; इन पाँचो महापापों से मनुष्यों को अलग रहना चाहिए ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">७</span>
+          <div>एक सर्वेश्वर पर ही अचल विश्वास, पूर्ण भरोसा तथा अपने अन्तर में ही उनकी प्राप्ति का दृढ़ निश्चय रखना, सद्गुरु की निष्कपट सेवा, सत्संग और दृढ़ ध्यानाभ्यास; इन पाँचो को मोक्ष का कारण समझना चाहिए ।</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. श्री सद्गुरु की सार शिक्षा -->
+    <section class="prayer-card" id="saar-shiksha">
+      <div class="section-badge">भाग ७</div>
+      <h2 class="card-title">श्री सद्गुरु की सार शिक्षा</h2>
+      <div class="verse-content">श्री सद्गुरु की सार शिक्षा, याद रखनी चाहिए ।
+अति अटल श्रद्धा प्रेम से, गुरु-भक्ति करनी चाहिए ।।
+
+मृग-वारि सम सब ही प्रपंचन्ह, विषय सब दुख रूप हैं ।
+निज सुरत को इनसे हटा, प्रभु में लगाना चाहिए ।।
+
+अव्यक्त व्यापक व्याप्य पर जो, राजते सबके परे ।
+उस अज अनादि अनन्त प्रभु में, प्रेम करना चाहिए ।।
+
+जीवात्म प्रभु का अंश है, जस अंश नभ को देखिये ।
+घट मठ प्रपंचन्ह जब मिटैं, नहिं अंश कहना चाहिए ।।
+
+ये प्रकृति द्वय उत्पत्ति-लय, होवैं प्रभू की मौज से ।
+ये अजा अनाद्या स्वयं हैं, हरगिज न कहना चाहिए ।।
+
+आवागमन सम दुःख दूजा, है नहिं जग में कोई ।
+इसके निवारण के लिए, प्रभु-भक्ति करनी चाहिए ।।
+
+जितने मनुष तन धारि हैं, प्रभु-भक्ति कर सकते सभी ।
+अन्तर व बाहर भक्ति कर, घट-पट हटाना चाहिए ।।
+
+गुरु जाप मानस ध्यान मानस, कीजिए दृढ़ साधकर ।
+इनका प्रथम अभ्यास कर, सुरत शुद्ध करना चाहिए ।।
+
+घट तम प्रकाश व शब्द पट त्रय, जीव पर हैं छा रहे ।
+कर दृष्टि अरु ध्वनि-योग-साधन, ये हटाना चाहिए ।।
+
+इनके हटे माया हटेगी, प्रभु से होगी एकता ।
+फिर द्वैतता नहिं कुछ रहेगी, अस मनन दृढ़ चाहिए ।।
+
+पाखण्ड अरुऽहंकार तजि, निष्कपट हो अरु दीन हो ।
+सब कुछ समर्पण कर गुरू की, सेव करनी चाहिए ।।
+
+सत्संग नित अरु ध्यान नित, रहिये करत संलग्न हो ।
+व्यभिचार चोरी नशा हिंसा, झूठ तजना चाहिए ।।
+
+सब सन्तमत सिद्धान्त ये, सब सन्त दृढ़ हैं कर दिये ।
+इन अमल थिर सिद्धान्त को, दृढ़ याद रखना चाहिए ।।
+
+यह सार है सिद्धान्त सबका, सत्य गुरु को सेवना ।
+‘मेंहीं’ न हो कुछ यहि बिना, गुरु सेव करनी चाहिए ।।</div>
+    </section>
+
+    <!-- 8. सन्तमत की परिभाषा -->
+    <section class="prayer-card" id="paribhasha">
+      <div class="section-badge">भाग ८</div>
+      <h2 class="card-title">सन्तमत की परिभाषा</h2>
+      <div class="numbered-list">
+        <div class="numbered-item">
+          <span class="item-num">१</span>
+          <div>शान्ति स्थिरता वा निश्चलता को कहते हैं ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">२</span>
+          <div>शान्ति को जो प्राप्त कर लेते हैं, सन्त कहलाते हैं ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">३</span>
+          <div>सन्तों के मत वा धर्म को सन्तमत कहते हैं ।</div>
+        </div>
+        <div class="numbered-item">
+          <span class="item-num">४</span>
+          <div>शान्ति प्राप्त करने का प्रेरण मनुष्यों के हृदय में स्वाभाविक ही है । प्राचीन काल में ऋषियों ने इसी प्रेरण से प्रेरित होकर इसकी पूरी खोज की और इसकी प्राप्ति के विचारों को उपनिषदों में वर्णन किया । इन्हीं विचारों से मिलते हुए विचारों को कबीर साहब और गुरु नानक साहब आदि सन्तों ने भी भारती और पंजाबी आदि भाषाओं में सर्वसाधारण के उपकारार्थ वर्णन किया। इन विचारों को ही सन्तमत कहते हैं; परन्तु सन्तमत की मूलभित्ति तो उपनिषद् के वाक्यों को ही मानने पड़ते हैं; क्योंकि जिस ऊँचे ज्ञान का तथा उस ज्ञान के पद तक पहुँचाने के जिस विशेष साधन- नादानुसन्धान अर्थात् सुरत-शब्द-योग का गौरव सन्तमत को है, वे तो अति प्राचीन काल की इसी भित्ति पर अंकित होकर जगमगा रहे हैं । भिन्न-भिन्न काल तथा देशों में सन्तों के प्रकट होने के कारण तथा इनके भिन्न-भिन्न नामों पर इनके अनुयायियों-द्वारा सन्तमत के भिन्न-भिन्न नामकरण होने के कारण सन्तों के मत में पृथक्त्व ज्ञात होता है; परन्तु यदि मोटी और बाहरी बातों को तथा पन्थाई भावों को हटाकर विचारा जाय और संतों के मूल एवं सार विचारों को ग्रहण किया जाय, तो यही सिद्ध होगा कि सब सन्तों का एक ही मत है ।</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. अपराह्ण एवं सायंकालीन विनती -->
+    <section class="prayer-card" id="vinati">
+      <div class="section-badge">भाग ९</div>
+      <h2 class="card-title">अपराह्ण एवं सायंकालीन विनती</h2>
+      <div class="verse-content">प्रेम-भक्ति गुरु दीजिये, विनवौं कर जोड़ी ।
+पल-पल छोह न छोड़िये, सुनिये गुरु मोरी ।।१।।
+
+युग-युगान चहुँ खानि में, भ्रमि-भ्रमि दुख भूरी ।
+पाएउँ पुनि अजहूँ नहिं, रहुँ इन्हतें दूरी ।।२।।
+
+पल-पल मन माया रमे, कभुँ विलग न होता ।
+भक्ति-भेद बिसरा रहे, दुख सहि-सहि रोता ।।३।।
+
+गुरु दयाल दया करी, दिये भेद बताई ।
+महा अभागी जीव के, दिये भाग जगाई ।।४।।
+
+पर निज बल कछु नाहिं है, जेहि बने कमाई ।
+सो बल तबहीं पावऊँ, गुरु होयँ सहाई ।।५।।
+
+दृष्टि टिकै स्रुति धुन रमै, अस करु गुरु दाया ।
+भजन में मन ऐसो रमै, जस रम सो माया ।।६।।
+
+जोत जगे धुनि सुनि पड़ै, स्रुति चढ़ै अकाशा ।
+सार धुन्न में लीन होइ, लहे निज घर वासा ।।७।।
+
+निजपन की जत कल्पना, सब जाय मिटाई ।
+मनसा वाचा कर्मणा, रहे तुम में समाई ।।८।।
+
+आस त्रास जग के सबै, सब वैर व नेहू ।
+सकल भुलै एके रहे, गुरु तुम पद स्नेहू ।।९।।
+
+काम क्रोध मद लोभ के, नहिं वेग सतावै ।
+सब प्यारा परिवार अरु, सम्पति नहिं भावै ।।१०।।
+
+गुरु ऐसी करिये दया, अति होइ सहाई ।
+चरण-शरण होइ कहत हौं, लीजै अपनाई ।।११।।
+
+तुम्हरे जोत-स्वरूप अरु, तुम्हरे धुन-रूपा ।
+परखत रहूँ निशि-दिन गुरु, करु दया अनूपा ।।१२।।</div>
+    </section>
+
+    <!-- 10. गुरु-संकीर्त्तन -->
+    <section class="prayer-card" id="guru-sankirtan">
+      <div class="section-badge">भाग १०</div>
+      <h2 class="card-title">गुरु-संकीर्त्तन</h2>
+      <div class="verse-content"><span class="highlight-tek">भजु मन सतगुरु सतगुरु सतगुरु जी ।। टेक ।।</span>
+जीव चेतावन हंस उबारन, भव भय टारन सतगुरु जी ।। भजु०।।
+
+भ्रम तम नाशन ज्ञान प्रकाशन, हृदय विगासन सतगुरु जी ।। भजु०।।
+आत्म अनात्म विचार बुझावन, परम सुहावन सतगुरु जी ।। भजु०।।
+सगुण अगुणहिं अनात्म बतावन, पार आत्म कहैं सतगुरु जी ।। भजु०।।
+मल अनात्म ते सुरत छोड़ावन, द्वैत मिटावन सतगुरु जी ।। भजु०।।
+पिण्ड ब्रह्माण्ड के भेद बतावन, सुरत चढ़ावन सतगुरु जी ।। भजु०।।
+गुरु-सेवा सत्संग दृढ़ावन, पाप निषेधन सतगुरु जी ।। भजु०।।
+सुरत-शब्द-मारग दरसावन, संकट टारन सतगुरु जी ।। भजु०।।
+ज्ञान विराग विवेक के दाता, अनहद राता सतगुरु जी ।। भजु०।।
+अविरल भक्ति विशुद्ध के दानी, परम विज्ञानी सतगुरु जी ।। भजु०।।
+प्रेम दान दो प्रेम के दाता, पद राता रहें सतगुरु जी ।। भजु०।।
+निर्मल युग कर जोड़ि के विनवौं, घट-पट खोलिय सतगुरु जी ।। भजु०।।</div>
+    </section>
+
+    <!-- 11. आरती (अन्तर जोत) -->
+    <section class="prayer-card" id="aarati-1">
+      <div class="section-badge">भाग ११</div>
+      <h2 class="card-title">आरती (अन्तर जोत)</h2>
+      <div class="verse-content">आरति संग सतगुरु के कीजै ।
+अन्तर जोत होत लख लीजै ।।
+
+पाँच तत्त्व तन अग्नि जराई ।
+दीपक चास प्रकाश करीजै ।।
+
+गगन-थाल रवि-शशि फल-फूला ।
+मूल कपूर कलश धर दीजै ।।
+
+अच्छत नभ तारे मुक्ताहल ।
+पोहप माल हिय हार गुहीजै ।।
+
+सेत पान मिष्टान्न मिठाई ।
+चन्दन धूप दीप सब चीजैं ।।
+
+झलक झाँझ मन मीन मँजीरा ।
+मधुर-मधुर धुनि मृदंग सुनीजै ।।
+
+सर्व सुगन्ध उड़ि चली अकाशा ।
+मधुकर कमल केलि धुनि धीजै ।।
+
+निर्मल जोत जरत घट माहीं ।
+देखत दृष्टि दोष सब छीजै ।।
+
+अधर-धार अमृत बहि आवै ।
+सतमत-द्वार अमर रस भीजै ।।
+
+पी-पी होय सुरत मतवाली ।
+चढ़ि-चढ़ि उमगि अमीरस रीझै ।।
+
+कोट भान छवि तेज उजाली ।
+अलख पार लखि लाग लगीजै ।।
+
+छिन-छिन सुरत अधर पर राखै ।
+गुरु-परसाद अगम रस पीजै ।।
+
+दमकत कड़क-कड़क गुरु-धामा ।
+उलटि अलल ‘तुलसी’ तन तीजै ।।</div>
+    </section>
+
+    <!-- 12. आरती (तन-मन्दिर) -->
+    <section class="prayer-card" id="aarati-2">
+      <div class="section-badge">भाग १२</div>
+      <h2 class="card-title">आरती (तन-मन्दिर)</h2>
+      <div class="verse-content">आरति तन-मन्दिर में कीजै ।
+दृष्टि युगल कर सन्मुख दीजै ।।
+
+चमके बिन्दु सूक्ष्म अति उज्ज्वल ।
+ब्रह्मजोति अनुपम लख लीजै ।।
+
+जगमग-जगमग रूप-ब्रह्मण्डा ।
+निरखि-निरखि जोती तज दीजै ।।
+
+शब्द-सुरत-अभ्यास सरलतर ।
+करि-करि सार शबद गहि लीजै ।।
+
+ऐसी जुगति काया-गढ़ त्यागि ।
+भव-भ्रम-भेद सकल मल छीजै ।।
+
+भव-खण्डन आरति यह निर्मल ।
+करि ‘मेंहीं’ अमृत रस पीजै ।।</div>
+    </section>
+
+  </main>
+
+  <!-- PRAYER FOOTER -->
+  <footer class="prayer-footer">
+    <strong>जय गुरु महाराज</strong>
+    महर्षि मेंहीं आश्रम, कुप्पाघाट, भागलपुर (बिहार)
+  </footer>
+
+  <script>
+    var currentSize = 17;
+    function adjustFontSize(delta) {
+      currentSize = Math.max(14, Math.min(24, currentSize + delta));
+      document.documentElement.style.setProperty('--verse-size', currentSize + 'px');
+    }
+
+    function goBack() {
+      if (window.parent && typeof window.parent.closePrayerModal === 'function' && window.parent !== window) {
+        window.parent.closePrayerModal();
+      } else {
+        window.location.href = './index.html';
+      }
+    }
+  </script>
+</body>
+</html>

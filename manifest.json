@@ -1,0 +1,26 @@
+{
+  "name": "Maharishi Mehi Baba — Santmat Devotional",
+  "short_name": "Mehi Baba",
+  "description": "Santmat Satsang & Bhajans of Maharishi Mehi Paramhans Ji Maharaj",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFF4E6",
+  "theme_color": "#FF8F00",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
